@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="219-dI-aXp">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,56 +13,87 @@
             <objects>
                 <viewController id="Pbq-F7-Wdk" customClass="GraphViewController" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zun-Yo-fQT">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yua-Eu-hVZ" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="100" width="375" height="418"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3AT-3n-ged"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yua-Eu-hVZ" firstAttribute="trailing" secondItem="3AT-3n-ged" secondAttribute="trailing" id="0bc-vW-OOg"/>
+                            <constraint firstItem="Yua-Eu-hVZ" firstAttribute="top" secondItem="3AT-3n-ged" secondAttribute="top" constant="100" id="B5g-aS-JC6"/>
+                            <constraint firstItem="Yua-Eu-hVZ" firstAttribute="bottom" secondItem="3AT-3n-ged" secondAttribute="bottom" constant="-100" id="Fe4-hn-NV3"/>
+                            <constraint firstItem="Yua-Eu-hVZ" firstAttribute="leading" secondItem="3AT-3n-ged" secondAttribute="leading" id="vL2-Fb-k4U"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="URd-YY-Spq"/>
+                    <connections>
+                        <outlet property="graphView" destination="Yua-Eu-hVZ" id="kNW-i7-bO7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7h-nP-t4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="394"/>
+            <point key="canvasLocation" x="309.60000000000002" y="393.55322338830587"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="meh-FM-3ti">
             <objects>
                 <viewController id="mLK-b0-Tv6" customClass="CalendarViewController" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVp-hH-L8O">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-gB-Hag" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="194" width="388" height="549"/>
+                                <rect key="frame" x="20" y="30" width="335" height="508"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVt-od-W9F" userLabel="InputButton">
+                                <rect key="frame" x="305" y="548" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Frd-1r-CPi"/>
+                                    <constraint firstAttribute="height" constant="50" id="OQo-ri-xg4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＋">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="21"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButton:" destination="mLK-b0-Tv6" eventType="touchUpInside" id="aIR-rh-lkX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sZi-uv-ppG"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sZi-uv-ppG" firstAttribute="bottom" secondItem="QeA-gB-Hag" secondAttribute="bottom" constant="100" id="9W4-se-Ro9"/>
-                            <constraint firstItem="QeA-gB-Hag" firstAttribute="top" secondItem="sZi-uv-ppG" secondAttribute="top" constant="150" id="A9V-5x-B1o"/>
-                            <constraint firstItem="QeA-gB-Hag" firstAttribute="leading" secondItem="sZi-uv-ppG" secondAttribute="leading" constant="20" id="YJA-k4-4LU"/>
-                            <constraint firstItem="sZi-uv-ppG" firstAttribute="bottom" secondItem="QeA-gB-Hag" secondAttribute="bottom" constant="100" id="ZXv-h6-9Qb"/>
-                            <constraint firstItem="QeA-gB-Hag" firstAttribute="top" secondItem="sZi-uv-ppG" secondAttribute="top" constant="150" id="bTQ-8t-Zah"/>
-                            <constraint firstItem="sZi-uv-ppG" firstAttribute="trailing" secondItem="QeA-gB-Hag" secondAttribute="trailing" constant="20" id="lCb-kB-J9b"/>
-                            <constraint firstItem="QeA-gB-Hag" firstAttribute="leading" secondItem="sZi-uv-ppG" secondAttribute="leading" constant="20" id="p1K-Al-pVp"/>
-                            <constraint firstItem="sZi-uv-ppG" firstAttribute="trailing" secondItem="QeA-gB-Hag" secondAttribute="trailing" constant="20" id="vrx-uo-9P4"/>
+                            <constraint firstItem="QeA-gB-Hag" firstAttribute="leading" secondItem="sZi-uv-ppG" secondAttribute="leading" constant="20" id="3G4-mf-CqU"/>
+                            <constraint firstItem="QeA-gB-Hag" firstAttribute="bottom" secondItem="rVt-od-W9F" secondAttribute="top" constant="-10" id="G35-Nl-miu"/>
+                            <constraint firstItem="rVt-od-W9F" firstAttribute="bottom" secondItem="sZi-uv-ppG" secondAttribute="bottom" constant="-20" id="Z1e-FY-kkv"/>
+                            <constraint firstItem="QeA-gB-Hag" firstAttribute="trailing" secondItem="sZi-uv-ppG" secondAttribute="trailing" constant="-20" id="bSP-0P-UHJ"/>
+                            <constraint firstItem="QeA-gB-Hag" firstAttribute="top" secondItem="sZi-uv-ppG" secondAttribute="top" constant="30" id="bWK-iT-v6c"/>
+                            <constraint firstItem="rVt-od-W9F" firstAttribute="trailing" secondItem="sZi-uv-ppG" secondAttribute="trailing" constant="-20" id="xVB-Xk-ZRT"/>
+                            <constraint firstItem="QeA-gB-Hag" firstAttribute="centerX" secondItem="aVp-hH-L8O" secondAttribute="centerX" id="zOq-s4-JeB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Zj7-9W-oAf"/>
                     <connections>
+                        <outlet property="addButton" destination="rVt-od-W9F" id="hOx-dX-BXN"/>
                         <outlet property="calendarView" destination="QeA-gB-Hag" id="ro1-4d-WDC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emo-eT-tfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="-256.82158920539734"/>
+            <point key="canvasLocation" x="309.375" y="-293.75"/>
         </scene>
-        <!--Main Tab Barcontroller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="XLw-E3-kH8">
             <objects>
-                <tabBarController id="219-dI-aXp" customClass="MainTabBarcontroller" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="219-dI-aXp" customClass="MainTabBarController" customModule="MyDietDiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dIm-Xw-lJR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,15 +106,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o3-A1-1gK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="91"/>
+            <point key="canvasLocation" x="-585" y="90"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

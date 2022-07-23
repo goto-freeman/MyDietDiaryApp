@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MainTabBarcontroller: UITabBarController {
+class MainTabBarController: UITabBarController {
     
 }
 
